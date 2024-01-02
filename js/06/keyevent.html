@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        img{position: absolute; }
+    </style>
+
+</head>
+<body>
+    <textarea></textarea>
+    <p>keyup <span></span></p>    
+    <p>keydown <span></span></p>    
+    <p>keypress <span></span></p>    
+    <img src="https://mod-file.dn.nexoncdn.co.kr/profile/830/1693371834758.png" width="500" style="top: 100px; left: 300px;">
+    <script>
+        document.querySelector("textarea").onkeyup = function(){  // 땔 때만 감지 : 갯수
+            document.querySelector("p:nth-of-type(1) span").innerText = this.value.length;
+        }
+        document.querySelector("textarea").onkeydown = function(){  // 
+            document.querySelector("p:nth-of-type(2) span").innerText = this.value.length;
+        }
+        document.querySelector("textarea").onkeypress = function(){
+            document.querySelector("p:nth-of-type(3) span").innerText = this.value.length;
+        }
+
+        window.onkeydown = function(){                        // onkeydown : 연속적인 반응, onkeyup : 땔 때 반응
+            const img = document.querySelector("img");
+            switch (event.keyCode) {
+                case 37: case 65:
+                    img.style.left = parseInt(img.style.left) - 3 + "px";
+                    break;
+                case 39:
+                    img.style.left = parseInt(img.style.left) - 3 + "px";
+                    break;
+                case 38: case 87:
+                    img.style.top = parseInt(img.style.top) - 3 + "px";
+                    break;
+                case 40:
+                    img.style.top = parseInt(img.style.top) - 3 + "px";
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

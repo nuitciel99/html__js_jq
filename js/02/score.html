@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <form name="frm">
+        <label>국어<input type="number" min="0" max="10" name="kor"></label>
+        <label>영어<input type="number" min="0" max="10" name="eng"></label>
+        <label>수학<input type="number" min="0" max="10" name="mat"></label>
+        <button>계산</button>
+        <br>
+        <label>총점<output name="total"></output></label>
+        <br><label>평균<output name="avg"></output></label>
+        <br><label>학점<output name="grade"></output></label>
+    </form>
+    <script>
+        // 작업
+        document.frm.onsubmit = function(){
+            event.preventDefault();
+
+            var total = +this.kor.value + +this.eng.value + +this.mat.value;
+            this.total.value = total;
+            var avg = total / 3;
+            this.avg.value =  avg;
+
+            if (avg >= 7) {
+                this.grade.value = 'A';
+            } else if (avg >= 4) {
+                this.grade.value = 'B';
+            } else{
+                this.grade.value = 'C';
+            }
+        }
+    </script>
+</body>
+</html>

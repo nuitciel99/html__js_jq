@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        ul {border: 1px solid; padding: 0 5px; width: 838px; margin: 0 auto;}
+        /* ul::after{content: ''; display: block; clear: both;}
+        .clearfix{} */
+        .clearfix::after{content: ''; display: block; clear: both;}
+        ul li {border: 1px solid; float: left; margin: 10px 3px;}
+        ul li a{color: #000; text-decoration: none;}
+        ul li a:hover strong{text-decoration: underline;}
+        ul li{width: 202px; list-style: none;}
+        ul li .thumb img{width: 100%; border-radius: 5px;}
+        ul li .info {font-size: 15px;}
+        ul li .info > * {margin: 15px 0;}
+        ul li .info strong{font-weight: 500; display: block; max-height: 40px; 
+            overflow: hidden; line-height: 20px; text-overflow: ellipsis;}
+        ul li .info img{width: 20px; height: 20px; border-radius: 50%;}
+        .modal-bg{
+            width: 100%;
+            height: 100%; 
+            background-image: linear-gradient(#0005, #000e);
+            position: fixed; top: 0; left: 0;
+        }
+        body{margin: 0;}
+        .modal{background: #eee; padding: 20px; position: fixed; top: 200px; left: 50%;}
+   </style>
+</head>
+<body>
+    <ul class="clearfix">
+        <li>
+            <a href="#">
+                <div class="thumb">
+                    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjZfODkg%2FMDAxNjkyOTc4MjY2Mjc4.l1oJkb2y2OhlNmWaTov7bSJPDeRCAT7OqLnPqaVG5ZAg.0S_M0DtRVtaBmeUHtmnsV-9OIUsx68uh9bE9W2k4lecg.PNG.above_cloud%2FK-20230826-004036971.png%22&type=nf365_240&service=navermain">
+                </div>
+                <div class="info">
+                    <strong><하트시그널4> 최종 선택 결과 정리! 한겨레의 마음엔 감동이 있다! (지영의 최종 커플은?)</strong>
+                    <div>
+                        <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogpfthumb.phinf.naver.net%2FMjAyMzAxMjZfMTkw%2FMDAxNjc0NzM4NzgzMzAz.LUemTa2U2V4aGHlpWthQU8sQryo_qhlqDsZYzHkY8HIg.YCkSc5wehLMRXgiF6NIq5zc69VMCUVK4dNn46NGJGHAg.PNG.above_cloud%2FprofileImage.png%22&type=nf96_96&service=navermain">
+                        <span>Cumulus</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="thumb">
+                    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjZfODkg%2FMDAxNjkyOTc4MjY2Mjc4.l1oJkb2y2OhlNmWaTov7bSJPDeRCAT7OqLnPqaVG5ZAg.0S_M0DtRVtaBmeUHtmnsV-9OIUsx68uh9bE9W2k4lecg.PNG.above_cloud%2FK-20230826-004036971.png%22&type=nf365_240&service=navermain">
+                </div>
+                <div class="info">
+                    <strong><하트시그널4> 최종 선택 결과 정리! 한겨레의 마음엔 감동이 있다! (지영의 최종 커플은?)</strong>
+                    <div>
+                        <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogpfthumb.phinf.naver.net%2FMjAyMzAxMjZfMTkw%2FMDAxNjc0NzM4NzgzMzAz.LUemTa2U2V4aGHlpWthQU8sQryo_qhlqDsZYzHkY8HIg.YCkSc5wehLMRXgiF6NIq5zc69VMCUVK4dNn46NGJGHAg.PNG.above_cloud%2FprofileImage.png%22&type=nf96_96&service=navermain">
+                        <span>Cumulus</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="thumb">
+                    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjZfODkg%2FMDAxNjkyOTc4MjY2Mjc4.l1oJkb2y2OhlNmWaTov7bSJPDeRCAT7OqLnPqaVG5ZAg.0S_M0DtRVtaBmeUHtmnsV-9OIUsx68uh9bE9W2k4lecg.PNG.above_cloud%2FK-20230826-004036971.png%22&type=nf365_240&service=navermain">
+                </div>
+                <div class="info">
+                    <strong><하트시그널4> 최종 선택 결과 정리! 한겨레의 마음엔 감동이 있다! (지영의 최종 커플은?)</strong>
+                    <div>
+                        <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogpfthumb.phinf.naver.net%2FMjAyMzAxMjZfMTkw%2FMDAxNjc0NzM4NzgzMzAz.LUemTa2U2V4aGHlpWthQU8sQryo_qhlqDsZYzHkY8HIg.YCkSc5wehLMRXgiF6NIq5zc69VMCUVK4dNn46NGJGHAg.PNG.above_cloud%2FprofileImage.png%22&type=nf96_96&service=navermain">
+                        <span>Cumulus</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="thumb">
+                    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjZfODkg%2FMDAxNjkyOTc4MjY2Mjc4.l1oJkb2y2OhlNmWaTov7bSJPDeRCAT7OqLnPqaVG5ZAg.0S_M0DtRVtaBmeUHtmnsV-9OIUsx68uh9bE9W2k4lecg.PNG.above_cloud%2FK-20230826-004036971.png%22&type=nf365_240&service=navermain">
+                </div>
+                <div class="info">
+                    <strong><하트시그널4> 최종 선택 결과 정리! 한겨레의 마음엔 감동이 있다! (지영의 최종 커플은?)</strong>
+                    <div>
+                        <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogpfthumb.phinf.naver.net%2FMjAyMzAxMjZfMTkw%2FMDAxNjc0NzM4NzgzMzAz.LUemTa2U2V4aGHlpWthQU8sQryo_qhlqDsZYzHkY8HIg.YCkSc5wehLMRXgiF6NIq5zc69VMCUVK4dNn46NGJGHAg.PNG.above_cloud%2FprofileImage.png%22&type=nf96_96&service=navermain">
+                        <span>Cumulus</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="thumb">
+                    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjZfODkg%2FMDAxNjkyOTc4MjY2Mjc4.l1oJkb2y2OhlNmWaTov7bSJPDeRCAT7OqLnPqaVG5ZAg.0S_M0DtRVtaBmeUHtmnsV-9OIUsx68uh9bE9W2k4lecg.PNG.above_cloud%2FK-20230826-004036971.png%22&type=nf365_240&service=navermain">
+                </div>
+                <div class="info">
+                    <strong><하트시그널4> 최종 선택 결과 정리! 한겨레의 마음엔 감동이 있다! (지영의 최종 커플은?)</strong>
+                    <div>
+                        <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogpfthumb.phinf.naver.net%2FMjAyMzAxMjZfMTkw%2FMDAxNjc0NzM4NzgzMzAz.LUemTa2U2V4aGHlpWthQU8sQryo_qhlqDsZYzHkY8HIg.YCkSc5wehLMRXgiF6NIq5zc69VMCUVK4dNn46NGJGHAg.PNG.above_cloud%2FprofileImage.png%22&type=nf96_96&service=navermain">
+                        <span>Cumulus</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="thumb">
+                    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjZfODkg%2FMDAxNjkyOTc4MjY2Mjc4.l1oJkb2y2OhlNmWaTov7bSJPDeRCAT7OqLnPqaVG5ZAg.0S_M0DtRVtaBmeUHtmnsV-9OIUsx68uh9bE9W2k4lecg.PNG.above_cloud%2FK-20230826-004036971.png%22&type=nf365_240&service=navermain">
+                </div>
+                <div class="info">
+                    <strong><하트시그널4> 최종 선택 결과 정리! 한겨레의 마음엔 감동이 있다! (지영의 최종 커플은?)</strong>
+                    <div>
+                        <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogpfthumb.phinf.naver.net%2FMjAyMzAxMjZfMTkw%2FMDAxNjc0NzM4NzgzMzAz.LUemTa2U2V4aGHlpWthQU8sQryo_qhlqDsZYzHkY8HIg.YCkSc5wehLMRXgiF6NIq5zc69VMCUVK4dNn46NGJGHAg.PNG.above_cloud%2FprofileImage.png%22&type=nf96_96&service=navermain">
+                        <span>Cumulus</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="thumb">
+                    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjZfODkg%2FMDAxNjkyOTc4MjY2Mjc4.l1oJkb2y2OhlNmWaTov7bSJPDeRCAT7OqLnPqaVG5ZAg.0S_M0DtRVtaBmeUHtmnsV-9OIUsx68uh9bE9W2k4lecg.PNG.above_cloud%2FK-20230826-004036971.png%22&type=nf365_240&service=navermain">
+                </div>
+                <div class="info">
+                    <strong><하트시그널4> 최종 선택 결과 정리! 한겨레의 마음엔 감동이 있다! (지영의 최종 커플은?)</strong>
+                    <div>
+                        <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogpfthumb.phinf.naver.net%2FMjAyMzAxMjZfMTkw%2FMDAxNjc0NzM4NzgzMzAz.LUemTa2U2V4aGHlpWthQU8sQryo_qhlqDsZYzHkY8HIg.YCkSc5wehLMRXgiF6NIq5zc69VMCUVK4dNn46NGJGHAg.PNG.above_cloud%2FprofileImage.png%22&type=nf96_96&service=navermain">
+                        <span>Cumulus</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="thumb">
+                    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjZfODkg%2FMDAxNjkyOTc4MjY2Mjc4.l1oJkb2y2OhlNmWaTov7bSJPDeRCAT7OqLnPqaVG5ZAg.0S_M0DtRVtaBmeUHtmnsV-9OIUsx68uh9bE9W2k4lecg.PNG.above_cloud%2FK-20230826-004036971.png%22&type=nf365_240&service=navermain">
+                </div>
+                <div class="info">
+                    <strong><하트시그널4> 최종 선택 결과 정리! 한겨레의 마음엔 감동이 있다! (지영의 최종 커플은?)</strong>
+                    <div>
+                        <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogpfthumb.phinf.naver.net%2FMjAyMzAxMjZfMTkw%2FMDAxNjc0NzM4NzgzMzAz.LUemTa2U2V4aGHlpWthQU8sQryo_qhlqDsZYzHkY8HIg.YCkSc5wehLMRXgiF6NIq5zc69VMCUVK4dNn46NGJGHAg.PNG.above_cloud%2FprofileImage.png%22&type=nf96_96&service=navermain">
+                        <span>Cumulus</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <div class="modal-bg"></div>
+    <div class="modal">
+        <h3>모달 제목</h3>
+        <p>모달 컨텐츠</p>
+        <button>닫기</button>
+    </div>
+    <script>
+        let f =  function(){
+            // 125 / 2
+            document.querySelector('modal').style.left = (window.innerWidth/2 - 125/2) + "px";
+        }
+        window.onresize = f;
+        window.onload = f;
+
+        let f2 = function(){
+            let target = document.querySelectorAll('.modal-bg, .modal');
+            for(let i in target){
+                if(target[i].style)
+                target[i].style.display = 'none';
+            }
+        }
+        let evTarget = document.querySelectorAll(".modal-bg, .modal button");
+        for(let i in evTarget){
+            evTarget[i].onclick = f2;
+        }
+        // cons/ole.log(window.innerWidth)
+    </script>
+</body>
+</html>

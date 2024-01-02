@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <!-- html5 / html4 xhtml -->
+    <!-- tag 열림 닫힘 -->
+    <!-- <tagName></tagName> -->
+    <!-- 닫힘 태그가 생략 가능한 태그 : meta, br, img <tagName /> -->
+    <!-- 절대, 상대경로 -->
+    <!-- .. : 부모 -->
+    <!-- . : 현재 -->
+    <!-- / : 루트  -->
+
+    <!-- 절대경로 표기 : 프로토콜 포함 -->
+    <p> 
+        <!-- 라이브 서버 : alt + L + O -->
+        <!-- 텍스트 <br /> 텍스트 -->
+        <h3>부모 탐색</h3>
+        <img src="../img/restaurant-img4.jpg" alt="" width="300" height="100">
+        <h3>루트 탐색</h3>
+        <img src="/AWS/workspace_web_jyk/img/restaurant-img4.jpg" alt="" width="300" height="auto">
+        <h3>서버 구동 루트 탐색</h3>
+        <img src="/img/restaurant-img4.jpg" alt="" width="300" height="auto">
+       
+        <!-- 80으로 맞추면 뜸 : 로컬이라 안 뜸 -->
+        <h3>서버 구동 절대 경로</h3>
+        <img src="http://127.0.0.1:5500/img/restaurant-img4.jpg" alt="" width="300" height="auto">
+        <h3>서버 비구동 절대 경로</h3>
+        <img src="file:///C:/AWS/workspace_web_jyk/img/restaurant-img4.jpg" alt="" width="300" height="auto">
+    </p>    
+</body>
+</html>

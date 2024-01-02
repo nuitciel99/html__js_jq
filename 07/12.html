@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        * {font:bold 20px/3 d2coding;}
+        /* 
+        letter-spacing 글자 사이 간격
+        word-spacing 단어 사이 간격 
+        */
+
+        .lt_3 {letter-spacing: -3px;}
+        .lt_2 {letter-spacing: -2px;}
+        .lt_1 {letter-spacing: -1px;}
+        .lt1 {letter-spacing: 1px;}
+        .lt2 {letter-spacing: 2px;}
+        .lt5 {letter-spacing: 5px;}
+
+        .wp_2 {letter-spacing: -2px;}
+        .wp_1 {letter-spacing: -1px;}
+        .wp1 {letter-spacing: 1px;}
+        .wp2 {letter-spacing: 2px;}
+        .wp5 {letter-spacing: 5px;}
+        .wp10 {letter-spacing: 10px;}
+
+        #line-wrap{width: 300px;}
+        #line-wrap p {border: 1px solid;}
+        .lh1 {line-height: 1px;}
+        .lh2 {line-height: 32px;}
+        .lh3 {line-height: 200%;}
+        .lh4 {line-height: -20px;}
+        
+        .box {
+            height: 100px; 
+            text-align: center;
+            background: #aaa;
+            line-height: 60px;
+        }
+        /* font css */
+        /* 
+         블록레벨 내의 컨텐츠를 상하 정렬하는 법 
+         1. line-height 조정
+         2. 상하 padding 조정(컨텐츠의 마진 조정)
+         3. vertical-align 지정(배치 방식 조정 후 적용 가능)
+         4. flex-layout 사용 
+         5. 포지셔닝(position)
+        */
+    </style>
+</head>
+<body>
+    <h2>letter-spacing $ word-spacing</h2>
+    <div id="style-wrap">
+        <p class="lt_3">글자 사이 간격 -3px</p>
+        <p class="lt_2">글자 사이 간격 -2px</p>
+        <p class="lt_1">글자 사이 간격 -1px</p>
+        <p class="lt1">글자 사이 간격 1px</p>
+        <p class="lt2">글자 사이 간격 2px</p>
+        <p class="lt5">글자 사이 간격 5px</p>
+
+        <p class="wp_2">단어 사이 간격 -2px</p>
+        <p class="wp_1">단어 사이 간격 -1px</p>
+        <p class="wp1">단어 사이 간격 1px</p>
+        <p class="wp2">단어 사이 간격 2px</p>
+        <p class="wp5">단어 사이 간격 5px</p>
+        <p class="wp10">단어 사이 간격 10px</p>
+    </div>    
+    <h2>line-height</h2>
+    <div id="line-wrap">
+        <p class="lh1">대법원장과 대법관이 아닌 법관은 대법관회의의 동의를 얻어 대법원장이 임명한다. 법률이 정하는 주요방위산업체에 종사하는 근로자의 단체행동권은 법률이 정하는 바에 의하여 이를 제한하거나 인정하지 아니할 수 있다.</p>
+        <p class="lh2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다.</p>
+        <p class="lh3">모든 국민의 재산권은 보장된다. 그 내용과 한계는 법률로 정한다. 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를 진다. 대통령의 임기는 5년으로 하며, 중임할 수 없다.</p>
+        <p class="lh4">농업생산성의 제고와 농지의 합리적인 이용을 위하거나 불가피한 사정으로 발생하는 농지의 임대차와 위탁경영은 법률이 정하는 바에 의하여 인정된다.</p>
+        <p class="lh5">농업생산성의 제고와 농지의 합리적인 이용을 위하거나 불가피한 사정으로 발생하는 농지의 임대차와 위탁경영은 법률이 정하는 바에 의하여 인정된다.</p>
+    </div>
+    <div class="box">텍스트<br>텍스트2</div>
+</body>
+</html>

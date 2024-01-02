@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        table{border-collapse: collapse; margin: 0 auto;}
+        table, th, td{border:1px solid;}
+        th, tb{padding: 8px;}
+        img{max-width: 300px; object-fit: cover; max-height: 300px;}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>이미지</th>
+            <th>제목</th>
+            <th>날짜</th>
+        </tr>
+        
+    </table>    
+    <script>
+        // CORS issue
+        // 1. option header accept (x)
+        // 2. Proxy Server (o)
+        // 3. jsonp (x) 나중에   juso.go.kr
+
+        // now >> local cli --> chosun : 출처가 달라서 거절
+        // local cli --> local serv --> chosun 
+        $.ajax("chosun.xml", {
+            success : function(data){
+                console.log(data);
+                let str = "";
+                    $(data).find("item").each(function(i){
+                        const img = $(this).find("media\\:content");
+                        str += "<tr>";
+                        str += "<td>" + i + "</td>";
+                        str += `<td><img src='${img.attr("url")}' width=${img.attr("width")} height=${img.attr("height")}></td>`;
+                        str += "<td>" + "<a href='"+$(this).find("link").text() +"'>" + $(this).find("title").text() + "</a></td>";
+                        str += "<td>" + $(this).find("pubDate").text() + "</td>";
+                        str += "</tr>";
+                    })
+                    $("table").append(str);
+            }
+        });
+        // U01TX0FVVEgyMDIzMDgxNzExMDczMTExNDAyNDU=
+    </script>
+</body>
+</html>

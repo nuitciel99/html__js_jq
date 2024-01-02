@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <!-- DB -->
+    <ul>
+        <li data-bno="9" title="바나나">9. banana</li>
+        <li data-bno="7" title="바나나">7. banana</li>
+        <li data-bno="5" title="사과">5. apple</li>
+        <li data-bno="2" title="키위">2. kiwi</li>
+        <li data-bno="1" title="딸기">1. berry</li>
+    </ul>    
+<!-- 
+        <ul>
+            <li data-bno="9" data-title="바나나">9. banana</li>
+            <li data-bno="7" data-title="바나나">7. banana</li>
+            <li data-bno="5" data-title="사과">5. apple</li>
+            <li data-bno="2" data-title="키위">2. kiwi</li>
+            <li data-bno="1" data-title="딸기">1. berry</li>
+        </ul>    -->
+    <form name="myForm">
+        자동로그인<input type="checkbox" name="remember-me">
+        <button>로그인</button>
+    </form>
+    <script>
+        let lis = document.querySelectorAll("li");
+        for(let i = 0; i<lis.length; i++){
+            lis[i].onclick = function(){
+                // console.log(this.dataset.bno + "클릭함");
+                // console.log(this.dataset.title + "클릭함");
+                console.log(lis[i].title);
+                console.log(lis[i]["title"]);
+                console.log(lis[i].getAttribute('title'));
+                console.log(lis[i].getAttribute('data-bno'));
+                // console.log(lis[i]["data-bno"]);   // 문서 객체는 이런 접근이 불가 
+            }
+            // let bno = lis[i].dataset.bno;
+            // console.log(bno);
+        }
+
+        document.myForm.onsubmit = function(){
+            event.preventDefault();
+            let chkbox = this["remember-me"];
+            if(chkbox.checked){
+                console.log("자동 로그인 기능 on");
+            }else{
+                console.log("자동 로그인 기능 off");
+            }
+        }
+    </script>
+</body>
+</html>

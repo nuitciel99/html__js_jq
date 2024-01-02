@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <table border="1" width = "600">
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>글번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>5</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>2023-09-07</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>4</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>2023-09-07</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>3</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>2023-09-07</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>2</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>2023-09-07</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>1</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>2023-09-07</td>
+        </tr>
+    </table>    
+    <script>
+        // document.querySelector("th [type='checkbox']").onchange =function(){
+        //     let chkbox = document.querySelectorAll("[type='checkbox']");
+        //     for(let i = 0; i<chkbox.length; i++){
+        //         chkbox[i].checked = this.checked;
+        //     };
+        //     // console.log(this.checked);
+        // };
+
+        // jquery
+        // setter, getter
+        // css
+        // attr
+        // html
+        // text
+        // click() : 함수 호출 
+        // click(function(){}) : setter
+        $("th :checkbox").change(function(){
+            $(":checkbox").prop("checked", $("th :checkbox").prop("checked")); 
+        })
+    </script>
+</body>
+</html>

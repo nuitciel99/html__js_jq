@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="script.js"></script>
+</head>
+<body>
+    <form method="get" enctype="multipart/form-data">
+        <input name="value">
+        <input type="file"> <!-- enctype="multipart/form-data" 가 있어야 파일 전송을 할 수 있다. -->
+        <button>전송</button> 
+        <!-- get은 url에 쿼리 스트링 형태로 노출이 된다. -->
+    </form>
+    <form method="post">
+        <input name="value">
+        <button>전송</button>
+        <!-- post는  url에 쿼리 스트링 형태로 노출이 되지 않지만 전송은 되는듯 하다. -->
+    </form>
+</body>
+</html>

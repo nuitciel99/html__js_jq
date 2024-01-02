@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(function(){
+            $(".outer").mouseenter(function(){
+                $ ("#msg").append("<h1>mouse enter</h1>");
+                // document.body.innerHTML += "<h1>mouse enter</h1>";
+            }).mouseover(function(){
+                $ ("#msg").append("<h1>mouse over</h1>");   // 사용 자제
+                // document.body.innerHTML += "<h1>mouse over</h1>";
+            }).hover(function(){
+                $ ("#msg").append("<h1>mouse hover</h1>");
+            }, function(){});
+
+            // hover : mouseenter / mouseleave
+
+            // focus / blur /focusin / focusout
+            $("input").focus(function(){
+                $("#msg").append("focus()");
+            }).focusin(function(){
+                $("#msg").append("focusin()");
+            }).blur(function(){
+                $("#msg").append("focusout()");
+            });
+
+            // focus : 초점이 잡힐때
+            // focusin : focus 직전
+
+            // blur : 초점이 빠질 때
+            // focusout : blur 직전
+
+        });
+    </script>
+    <style>
+        /* .propa div, .propa h1{padding: 16px; border: 3px solid;} */
+        .outer{background: red; padding: 50px; display: inline-block;}
+        .inner{background: yellow; padding: 50px; width: 0;}
+    </style>
+</head>
+<body>
+    <!-- <div class="propa">
+        <div onclick="alert(1)">        4>3>2>1 : 자식에서 부모 순(기본값) : 이벤트 버블링 -->
+            <!-- <div onclick="alert(2); console.log(event.target); event.stopPropagation()">    거의 모든 이벤트는 버블링이 됨 -->
+                <!-- <div onclick="alert(3)">
+                    <h1 onclick="alert(4)">hi</h1>
+                </div>
+            </div>
+        </div>
+    </div>     -->
+
+    <div class="outer">
+        <div class="inner"></div>
+        <input>
+        <div id="msg"></div>
+    </div>
+</body>
+</html>

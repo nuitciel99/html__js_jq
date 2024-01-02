@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<students>
+    <student>
+        <no>1</no>
+        <name>홍길동</name>
+        <score>80</score>
+    </student>
+    <student>
+        <no>2</no>
+        <name>김길동</name>
+        <score>70</score>
+    </student>
+    <student>
+        <no>3</no>
+        <name>고길동</name>
+        <score>100</score>
+    </student>
+</students>

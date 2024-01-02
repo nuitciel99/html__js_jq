@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body{text-align: center;}
+        .rsp{
+            background: url(rsp.png) no-repeat; 
+            height: 168px; border: 2px solid; display: inline-block;
+            cursor: pointer;
+        }
+        .s{width: 130px;}
+        .r{width: 130px; background-position-x: -130px;}
+        .p{width: 145px; background-position-x: -257px;}
+
+        .result2{display: none;}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // 0 가위 1 바위 2 보
+        $(function(){
+            $(".choice .rsp").click(function(){
+                let rsp = ['s', 'r', 'p'];
+                let my = $(this).index();
+                let com = parseInt(Math.random()*3);
+                console.log(my, com, my-com);
+
+                let msg = "";
+                switch(my-com){
+                    case 0 : // 비김
+                    msg = "비김"
+                    break;
+                    case 1 : case - 2: // 이김
+                    msg = "이김"
+                        break;
+                    case 2 : case -1: // 짐
+                    msg = "짐"
+                }
+                $(".result").html($("<h2>").text(msg));
+                $(".result2")
+                    .find(".rsp").removeClass("r s p").end()
+                    .find(".rsp:eq(0)").addClass(rsp[my]).end()
+                    .find(".rsp:eq(1)").addClass(rsp[com]).end()
+                    .show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>가위바위보 선택</h1>
+    <div class="choice">
+        <div class="rsp s"></div>    
+        <div class="rsp r"></div>    
+        <div class="rsp p"></div>    
+    </div>
+    <hr>
+    <div class="result2">
+        <div class="rsp ">플레이어</div> 
+        <div class="rsp ">컴퓨터</div> 
+    </div>
+    <div class="result">
+        
+    </div>
+</body>
+</html>

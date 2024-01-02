@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        ul, li{list-style: none; color: #000;}
+        a:link{text-decoration: none;}
+        img{display: block;}
+        .clearfix::after{
+            content: ""; display: block; clear: both;
+        }
+        html,body {height:100%;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+        table {border-collapse:collapse;border-spacing:0}
+
+        /* .boxwrap{
+            width: 100px;
+            height: 100vh;
+            padding: 10px;
+            border: 10px solid #000;
+            color: green;
+            background: skyblue;
+        }
+        .box{
+            width: 50px;
+            height: 100%;
+            background: pink;
+        }
+        .box:hover {
+            background-color:#002ead;
+            transition: 0.3s;
+        }
+
+        .table, td{
+            border: 1px solid #000; 
+        } */
+
+        .boxWrap{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* center */
+            /* margin-left: -50px; */
+            /* margin-left: calc(-100px / 2); */
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .bar{
+            width: calc( 100% - 30px );
+            height: 5px;
+            background: skyblue;
+            border-radius: 3px;
+            position: absolute; 
+            transition: 0.3s;
+        }
+
+        .bar.start{
+            /* up : - , down : + */
+            transform: translateY(-25px);
+        }
+        .bar.end{
+            /* up : - , down : + */
+            transform: translateY(+25px);
+        }
+
+        .boxWrap.active .bar.start{
+            transform: translateY(0) rotate(45deg);
+        }
+        .boxWrap.active .bar.middle{
+            opacity: 0;
+        }
+        .boxWrap.active .bar.end{
+            transform: translateY(0) rotate(-45deg);
+        }
+
+        .bar:hover .menubars { display: block; } 
+        .menubars { display: none; }
+        
+        .box{
+            width: 300px;
+            height: 100%;
+            background: skyblue;
+            position: absolute;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+            opacity: 0;
+            left: 0;
+        }
+
+        .box.view{
+            opacity: 1;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="boxwrap">
+        <div class="box">
+            test
+        </div>
+    </div>
+    <table class="table">
+        <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+        </tr>
+    </table> -->
+    <!-- <a href="#">test</a> -->
+    <div class="boxWrap " onclick="button()">
+        <div class="bar start">
+            <ul class="menubars">
+                <li>메뉴</li>
+                <li>메뉴</li>
+                <li>메뉴</li>
+                <li>메뉴</li>
+            </ul>  
+        </div>
+        <div class="bar middle"></div>
+        <div class="bar end"></div>
+    </div>
+
+    <div class="box">
+        test
+        <a href="#" onclick="button()">X</a>
+    </div>
+    <script>
+        function button(){
+            // alert("test")
+            console.log("test");
+            const btnElm = document.querySelector(".boxWrap");
+            btnElm.classList.toggle("active");
+
+            const boardElm = document.querySelector(".box");
+            boardElm.classList.toggle("view");
+        }
+    </script>
+</body>
+</html>

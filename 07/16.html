@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .ti {width: 500px; margin: 0 auto;}
+        .ti * {border: 1px solid; padding: 16px;}
+        .ti1 {text-indent: 40px;}
+        .ti2 {text-indent: -40px;}
+        /* ti3 때문에 가로줄이 생김 */
+        .ti3 {text-indent: 9999px;}
+        .ti4 {text-indent: -9999px;}
+
+        .ta1 {text-align: left;}
+        .ta2 {text-align: right;}
+        .ta3 {text-align: center;}
+        .ta4 {text-align: justify;}
+
+        /* overflow white-space text-overflow             word-wrap*/
+        .box {width: 362px; height: 190px; border: 5px dashed red; overflow: hidden;}
+        .box img {padding: 0; transition: all .3s;}
+        .box img:hover{transform:  scale(1.1);}
+
+        .to1 {white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;}
+        .to2 {white-space: pre;}
+        .to3 {white-space: pre-wrap;}
+        .to4 {white-space: pre-line;}
+
+        /* .to-wrap{} */
+    </style>
+</head>
+<body>
+    <div class="ti">
+        <p class="ti1">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다.</p>
+        <p class="ti2">모든 국민의 재산권은 보장된다. 그 내용과 한계는 법률로 정한다. 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를 진다. 대통령의 임기는 5년으로 하며, 중임할 수 없다.</p>
+        <p class="ti3">대법원장과 대법관이 아닌 법관은 대법관회의의 동의를 얻어 대법원장이 임명한다. 법률이 정하는 주요방위산업체에 종사하는 근로자의 단체행동권은 법률이 정하는 바에 의하여 이를 제한하거나 인정하지 아니할 수 있다.</p>
+        <p class="ti4">농업생산성의 제고와 농지의 합리적인 이용을 위하거나 불가피한 사정으로 발생하는 농지의 임대차와 위탁경영은 법률이 정하는 바에 의하여 인정된다.</p>    
+    </div>
+    <hr>
+    <div class="ti">
+        <p class="ta1">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다.</p>
+        <p class="ta2">모든 국민의 재산권은 보장된다. 그 내용과 한계는 법률로 정한다. 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를 진다. 대통령의 임기는 5년으로 하며, 중임할 수 없다.</p>
+        <p class="ta3">대법원장과 대법관이 아닌 법관은 대법관회의의 동의를 얻어 대법원장이 임명한다. 법률이 정하는 주요방위산업체에 종사하는 근로자의 단체행동권은 법률이 정하는 바에 의하여 이를 제한하거나 인정하지 아니할 수 있다.</p>
+        <p class="ta4">농업생산성의 제고와 농지의 합리적인 이용을 위하거나 불가피한 사정으로 발생하는 농지의 임대차와 위탁경영은 법률이 정하는 바에 의하여 인정된다.</p>    
+    </div>
+    <h3>overflow</h3>
+    <div class="box ti">
+        <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">
+    </div>
+    <div class="ti to-wrap">
+        <p class="to1">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 
+            국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 
+            국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다.</p>
+        <p class="to2">모든 국민의 재산권은 보장된다. 
+            그 내용과 한계는 법률로 정한다. 
+            대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를 진다. 
+            대통령의 임기는 5년으로 하며, 중임할 수 없다.</p>
+        <p class="to3">대법원장과 대법관이 아닌 법관은 대법관회의의 동의를 얻어 대법원장이 임명한다. 
+            법률이 정하는 주요방위산업체에 종사하는 근로자의 단체행동권은 법률이 정하는 바에 의하여 
+            이를 제한하거나 인정하지 아니할 수 있다.</p>
+        <p class="to4">농업생산성의 제고와 농지의 합리적인 이용을 위하거나 
+            불가피한 사정으로 발생하는 농지의 임대차와 위탁경영은 법률이 정하는 바에 의하여 인정된다.</p>    
+    </div>
+</body>
+</html>

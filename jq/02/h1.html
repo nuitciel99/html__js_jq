@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <!-- h1태그를 클릭 시 -->
+    <!-- <div>
+        <h1>Hello World</h1>   
+    </div> -->
+
+    <h1>Hello World</h1>   
+
+    <script>
+        // $("div")
+        // .click(function(){
+        //     $("div").append("<h1>Hello World</h1>");
+        // });
+
+        // $("h1")
+        // .click(function(){
+        //     // $("body").append("<h1>Hello World</h1>");
+        //     // $(this).after("<h1>Hello World</h1>");
+        //     // $(h1).append("<h1>Hello World</h1>");
+        //     // $("body").append(this.outerHTML);
+            
+        //     // clone : 이벤트도 복사 
+        //     $("body").append($(this).clone(true));
+        // });
+
+        // 동적으로 생성된 태그에는 event가 없음
+        // solve) 1. clone을 통해 이벤트까지 복제
+        //        2. 이벤트를 위임 처리 >> 좋은 방법
+        //        이벤트 대상을 body >> 이벤트 발생 위치
+        // $("body").delegate("h1", "click", function(){
+        //     $("body").append("<h1>Hello World</h1>");
+        // });
+
+        $("body").on("click", "h1",  function(){
+            $("body").append("<h1>Hello World</h1>");
+        });
+        // bind, on
+        // on : delegate 형태 가능, 많이 씀
+    </script>
+</body>
+</html>

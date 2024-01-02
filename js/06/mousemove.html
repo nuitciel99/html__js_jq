@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 십자가형 마우스 커서 -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        div.area{width: 800px; height: 500px; border: 3px solid; margin: 0 auto; position: relative;}
+        h3{text-align: center;}
+        .vl{width: 1px; height: 500px; background: #aaa; position: absolute; z-index: -1;}
+        .hl{width: 800px; height: 1px; background: #aaa; position: absolute; z-index: -1;}
+    </style>
+</head>
+<body>
+    <div class="area">
+        <div class="vl"></div>
+        <div class="hl"></div>
+    </div> 
+    <h3>x : 20, y : 30</h3>
+    
+    <script>
+        document.querySelector("div").onmousemove = function(){
+            console.log(event.offsetX);
+            console.log(event.offsetY);
+
+            document.querySelector("h3").innerHTML = 
+            `x:${event.offsetX < 0 ? 0 : event.offsetX} y:${event.offsetY < 0 ? 0 : event.offsetY}`
+        
+            // 해당 태그 위치 : left top 기준
+            document.querySelector(".vl").style.left = event.offsetX + "px";
+            document.querySelector(".hl").style.top = event.offsetY + "px";
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <h1>hello</h1>
+    <h1>world</h1>
+
+    <button>버튼</button>
+
+    <script>
+        // click 활용 같은 문자 출력
+        $("h1")
+        .click(function(){
+            console.log(($(this).text()));
+        })
+        // bind 활용 click 출력
+        .bind("click", function(){
+            console.log("bind", ($(this).text()));
+        })
+        // on 활용 
+        .on("click", function(){
+            console.log("on", ($(this).text()));
+            $(this).off("click");
+        })
+        // hover 활용 문자색 변화 주기 
+        .hover(function(){
+            $(this).css("color", "orange");
+        }, function(){
+            $(this).css("color", "black");
+        });
+        // 버튼 색과 밑줄 커서 시
+        $("button")
+        .on("mouseenter focus", function(){
+            $(this).css({color : 'red', textDecoration : 'underline'});
+        })
+        .on("mouseleave blur", function(){
+            $(this).css({color : 'black', textDecoration : 'none'});
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <h1>hello</h1>    
+    <h1>world</h1>    
+
+    <button>버튼</button>
+    <script>
+        $("h1")
+        .click(function(){                      // 이벤트 이름에 해당하는 함수 
+            console.log(($(this).text()));
+        })
+        .bind("click", function(){              // bind
+            console.log("bind", $(this).text());
+        })
+        .on("click", function(){                // on : 많이 씀 : 복수개의 이벤트를 병렬적으로 사용 가능
+            console.log("on", $(this).text());
+            $(this).off("click");
+        })
+        .hover(function(){
+            $(this).css("color", "orange");
+        }, function(){
+            $(this).css("color", "black");
+        });
+        $("button").on("mouseenter focus", function(){
+            $(this).css({color:'red', textDecoration:'underline'})
+        }).on("mouseleave blur", function(){
+            $(this).css({color:'black', textDecoration:'none'})
+
+            // 기본이벤트제거
+            event.preventDefault();
+            // 이벤트 전파 금지
+            event.stopPropagation();
+        });
+        // document.querySelector("a").addEventListener("click", function(){}, true);  // 기본값 : false
+        // event
+    </script>
+</body>
+</html>

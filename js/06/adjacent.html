@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <!-- ul 태그 기준 -->
+    <!-- before > beforebegin -->
+    <ul>
+        <!-- prepend > afterbegin -->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <!-- append > beforeend -->
+    </ul>    
+    <!-- after > afterend -->
+    <script>
+        document.querySelector("ul").insertAdjacentHTML("beforeend", "<li>10</li>");
+        document.querySelector("ul").insertAdjacentHTML("afterbegin", "<li>20</li>");
+        document.querySelector("ul li:nth-child(3)").insertAdjacentHTML("afterend", "<li>30</li>");
+        document.querySelector("ul li:nth-child(3)").insertAdjacentHTML("beforebegin", "<li>40</li>");
+
+        let str = "<select>";
+        const year = new Date().getFullYear();
+        for(let i = 0; i<100; i++){
+            // str += "<option " + (i == 70 ? "selected" : '') +">" + (i + year - 99) + "</option>";
+            str += `<option ${i == 70 ? "selected" : ''}>${i + year - 99}</option>`;
+        };
+        str += "</select>";
+        document.body.insertAdjacentHTML("beforeend", str);
+
+        str = "<select id='mon'>";
+        for(let i = 1; i<=12; i++){
+            str += `<option>${i}</option>`;
+        };
+        str += "</select>";
+        document.body.insertAdjacentHTML("beforeend", str);
+
+        function f(month = 1){
+            const lastDates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            str = "<select>";
+            for(let i = 1; i<=lastDates[month-1]; i++){
+                str += `<option>${i}</option>`;
+            };
+            str += "</select>";
+            document.body.insertAdjacentHTML("beforeend", str);
+        };
+        f(2);
+
+        document.querySelector("#mon").onchange = function(abcd){
+            document.querySelector("select:last-child").remove();
+            f(this.value);
+        };
+
+        // dom.onclick ~ = f()
+        // dom : 이벤트 대상 (target)
+        // onclick : 이벤트 속성 >> on을 제외한 나머지 문자열을 이벤트 이름 >> click 
+        // f : 이벤트 핸들러, 리스너 >> 해당 함수의 첫번째 매개변수 : 이벤트 객체 
+
+        // 이벤트 전파, 기본이벤트 
+    </script>
+</body>
+</html>

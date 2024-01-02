@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- step 1. UI 구성 -->
+    <!-- step 2. tag jq -->
+    <!-- step 3. 함수 구현 -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        li{display: inline-block; list-style: none; padding: 20px;}
+        li .link{text-decoration: none; color: black;}
+        li .active{text-decoration: underline; color: black; font-weight: bold;}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <ul>
+        <li><a class="active link" href="#">1</a></li>
+        <li><a class="link" href="#">2</a></li>
+        <li><a class="link" href="#">3</a></li>
+        <li><a class="link" href="#">4</a></li>
+    </ul>
+
+    <script>
+        $("a").click(function(){
+            event.preventDefault();
+            $("a").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
+</body>
+</html>

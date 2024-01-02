@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <!-- scrolldown continue -->
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        ul{list-style: none; padding: 30px 0; border-top: 1px solid #666;}
+        li{border-bottom: 1px solid #aaa;}
+    </style>
+
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        // step 1. : 태그를 jq로 생성
+        let num = 1;
+        function createText(){
+            let str = "";
+            for(let i = 0; i<20; i++){
+                str += `
+                <li>
+                    <h2>${num++}</h2>  
+                    <p>제목</p>
+                </li>
+                `;
+            };
+            return str;
+        };
+        // step 2 : 태그를 가져와서 텍스트 담기 
+        document.querySelector("ul").innerHTML += createText();
+        
+        window.onscroll = function(){
+            let sy = scrollY;
+            // document의 body에 접근하여 body를 이루고 있는 elements(contents, components 등 모두 포함)에 대한 정보
+            let dh = document.body.offsetHeight;
+            let wih = this.innerHeight;
+
+            if(sy-dh-wih <= 300){
+                document.querySelector("ul").innerHTML += createText();
+            }
+        }
+    </script>    
+
+</body>
+</html>

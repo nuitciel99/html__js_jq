@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <form name="frm">
+        <input type="text" min="1" max="10" name="num1">
+        <input type="text" min="1" max="10" name="num2">
+        <button>계산</button>
+        <br>덧셈<output name="result1"></output>
+        <br>뺄셈<output name="result2"></output>
+        <br>곱셈<output name="result3"></output>
+        <br>나눗셈<output name="result4"></output>
+    </form>    
+    <script>
+        document.frm.onsubmit = function(){
+            event.preventDefault();
+            // 문자열 계산으로 인식해 덧셈이 아닌 결합을 함
+            this.result1.value = this.num1.value + +this.num2.value
+            this.result2.value = this.num1.value - this.num2.value
+            this.result3.value = this.num1.value * this.num2.value
+            this.result4.value = this.num1.value / this.num2.value
+        }
+    </script>
+</body>
+</html>

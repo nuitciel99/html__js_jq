@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <p>
+        문장 내용 중<q cite="">인용문 표시할 때 사용</q>합니다.
+    </p>    
+    <p>파일을 찾을 수 없을 때 나오는 응답 메세지는 <samp>File Not Found</samp>입니다.</p>
+    <p>보통 문자 크기와 <small>작은</small> 문자 크기</p>
+    <input>
+    <span>0</span>
+    <script>
+        let input = document.querySelector("input");
+        input.onkeyup = ( ) => {
+            document.querySelector("span").innerText = input.value.length;
+        }
+    </script>
+    <noscript>
+        이 사이트는 자바스크립트를 필요로 합니다.
+    </noscript>
+</body>
+</html>

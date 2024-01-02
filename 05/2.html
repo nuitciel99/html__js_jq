@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .gnd{padding: 20px; background-color: black; margin: 0;}
+        .gnd > li {float: left; list-style: none;}
+        .gnd::after {display: block; content: '';clear: both;}
+        .gnd > li > a {color: #eee; text-decoration: none; margin: 20px;}
+        .gnd > li > a:hover{color: yellow;}
+
+        .gnd > li:hover ul {display: block;}
+        .gnd ul {position: absolute; background-color: black; padding: 20px; display: none;}
+        .gnd ul li {list-style: none; margin: 15px 0;}
+        .gnd ul li a {color: #eee; text-decoration: none;}
+    </style>
+</head>
+<body>
+    <ul style="list-style-image: url(../img/bu_x.png);">
+        <li>스파게티</li>
+        <li>피자</li>
+        <li>커피</li>
+    </ul>    
+    <ul style="list-style-position: inside;">
+        <li>스파게티</li>
+        <li>피자</li>
+        <li>커피</li>
+    </ul>
+    <ul>
+        <li>커피</li>
+        <li>스파케티</li>
+            <ul>
+                <li>바네스파게티</li>
+                <li>볼레스파게티</li>
+            </ul>
+    </ul>
+    <ul class="gnd">
+        <li><a href="">대분류1</a>
+            <ul>
+                <li><a href="">중분류1</a></li>
+                <li><a href="">중분류2</a></li>
+                <li><a href="">중분류3</a></li>
+            </ul>
+        </li>
+        <li><a href="">대분류2</a>
+            <ul>
+                <li><a href="">중분류1</a></li>
+                <li><a href="">중분류2</a></li>
+                <li><a href="">중분류3</a></li>
+            </ul>
+        </li>
+        <li><a href="">대분류3</a></li>
+    </ul>
+</body>    
+</html>

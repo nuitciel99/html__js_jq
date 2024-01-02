@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* 
+        a = 10
+        a = 20
+        a ?
+         */
+         /* class 선택자 */
+         /* .backend {background: #c99;} */
+         /* .frontend {background: #99c;} */
+         /* .frontend {background: #9cc;} */
+         /* id */
+         /* #webPublisher {background: #c9c;} */
+        /* tag */
+        /* p {background: #9cc;} */
+        /* 종속 선택자 */
+        /* p.cls1 : p태그 중에 cls1 클래스를 가진 태그 */
+        /* p.cls1 {background: #cc9;} */
+        /* h1.backend.frontend {background: #9c9;} */
+        /* 다중 선택자 */
+        /* h1, h2 {color: red;} */
+        /* 자손 */
+        /* div p {text-decoration: underline;} */
+        /* body p {font-style: italic;} */
+        /* 자식 */
+        /* div > p {color: blue;} */
+        /* div > div {color: green;} */
+        /* body > div {padding-left: 20px;}  */
+        /* div {padding-left: 20px;}  */
+        /* 인접 + */
+        div + p {background: #c9c;}
+
+        /* 형제(동생) ~ */
+        div ~ p {color: red;}
+    </style>
+</head>
+<body>
+    <h1 id="subject">웹 문서 웹표준 웹접근성 크로스브라우징 반응형</h1>
+    <h2 class="web-designer">웹 디자이너</h2>
+    <h3 id="webPublisher" class="frontend">웹 퍼블리셔</h3>
+    <h4 class="frontend">프론트엔드</h4>
+    <div class="backend frontend">백엔드</div>
+    <p id="fullstack">풀스택</p>   
+    <h1>추가 컨텐츠</h1>
+    <p class="cls1">선택자 테스트1</p> 
+    <div class="cls1">선택자 테스트2</div> 
+    <div>
+        <p>웹 기획</p>
+        <div>추가 컨텐츠</div>
+        <p>웹 스토리보드</p>
+        <p>웹 스토리 탤링</p>
+    </div>
+</body>
+</html>

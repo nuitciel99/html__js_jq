@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        :disabled{background: #888;}
+        :enabled{padding: 10px;}
+        :required{box-shadow: 0 0 3px red;}
+        /* :in-range{box-shadow: 0 0 3px green;}
+        :valid{box-shadow: 0 0 3px green;} */
+        form:invalid{box-shadow: 0 0 3px red;}
+        ::placeholder{font-weight: bold;}
+
+        input[type='radio']:checked+label{color: blue; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" name="id" placeholder="id를 입력">
+        <input type="password" name="pw" placeholder="pw를 입력" readonly>
+        <input type="password" name="pw2" placeholder="pw를 한번 더 입력" disabled>
+        <input type="number" min="1" max="10" step="2">
+        <input type="radio" name="nation" value="kr" id="kr"><label for="kr">한국</label>
+        <input type="radio" name="nation" value="ch" id="ch"><label for="ch">중국</label>
+        <input type="radio" name="nation" value="jp" id="jp"><label for="jp">일본</label>
+        <button>로그인</button>
+    </form>    
+</body>
+</html>

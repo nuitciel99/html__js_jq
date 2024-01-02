@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <p id="para">문단 태그</p>    
+    <script>
+        // 바닐라 script에서 문서 객체 가져오기
+        // document.getElementById("para").style.color = "red";
+        // $("#para").css("color", "blue");
+        let para = document.getElementById("para"); // dom
+        $(para).css("color", "green");
+
+        let arr = [{a:1, b:2}, {a:10, b:30}];
+        $(arr).each((idx, item)=> {
+            // jq each
+            console.log(item);
+            console.log(this); 
+        });
+        // vobj > jq obj : $() wrapping
+
+        // jq obj > vobj : ~번째 호출 
+        console.log($(para)[0]);
+        console.log($(para).get(0));
+
+        $($(para).get(0)).css("color", "red").click(function(){
+            console.log(this); // 바닐라 type : 순수 js
+            console.log($(this)); // 
+            $(this).css("color", "green"); 
+        });
+
+        // window.onload = function(){
+
+        // };
+        // $(window).load(function(){
+
+        // });
+        // obj > jquery obj : $() wrapping : js obj >> jq obj
+
+
+    </script>
+</body>
+</html>

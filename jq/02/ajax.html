@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <!-- xml parsing -->
+    <!-- 라이브에서 접속 -->
+    <button>ajax 호출</button>    
+    <script>
+        // http status
+        // 200 404
+        // 1xx : 준비
+        // 2xx : 성공
+        // 3xx : 일시적 중지
+        // 4xx : 클라이언트 오류
+        // 5xx : 서버 오류
+        $("button").click(function(){
+            $.ajax({
+                // url:'h1.html',
+                url:'student.xml',
+                dataType : "text", // text, xml, json
+                success : function(a, b, c){
+                    // 성공 시 할 일 
+                    // console.log(a); // string
+                    // console.log(b); // success
+                    // console.log(c);
+                    const xml = $.parseXML(a);
+                    console.log(xml);
+
+                    let ul = "<ul>"
+                    $(xml).find("student").each(function(i, elem){
+                        ul += "<li>" + $(elem).find("name").text() + "</li>";
+                    }); // length : 3
+                    ul += "</ul>"
+
+                    $(ul).appendTo("body");
+                },
+                error : function(){
+                    // 실패 시 할 일 
+                },
+                complete : function(){
+                    // 성공, 실패 시 모두 할일 
+                }
+            })
+        });
+    </script>
+</body>
+</html>

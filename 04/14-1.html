@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <!-- 원격 04에 넣어서 내 도메인 확인 -->
+    <form>
+        <input type="text" placeholder="아이디를 입력하세요">
+        <input type="password" name="userpw" placeholder="비밀번호를 입력하세요">
+        <input type="submit" value="로그인">
+        자동로그인 <input type="checkbox" name="auto">
+        <input type="button" value="id중복확인">
+        <button type="button">id중복확인</button>
+        <button type="submit">로그인</button>
+    </form>    
+    <hr>
+    <form>
+        <fieldset>
+            <legend>취미</legend>
+            <label><input type="checkbox" name="hobby" value="golf">골프</label>
+            <input type="checkbox" name="hobby" value="soccer" id="football" checked><label for="football">축구</label>
+            <label><input type="checkbox" name="hobby" value="baseball">야구</label>
+            <input type="checkbox" name="hobby" value="pingpong" id="pingpong"><label for="pingpong">탁구</label>
+        </fieldset>
+        <fieldset>
+            <legend>전공선택</legend>
+            <label>인문계<input type="radio" name="subject" value="sub1"></label>
+            <label>자연계<input type="radio" name="subject" value="sub2"></label>
+            <label>예체능계<input type="radio" name="subject" value="sub3" checked></label>
+        </fieldset>
+        <fieldset>
+            <legend>색상 / 날짜 선택</legend>
+            <input type="color" name="color"><br>
+            <!-- 255, 0, 0 > #ff0000 -->
+            <label>date<input type="date" name="date" min="2023-08-21"></label><br>
+            <label>datetime-local<input type="datetime-local" name="datetime-local"></label><br>
+            <label>week<input type="week" name="week"></label><br>
+            <label>time<input type="time" name="time"></label><br>
+            <label>month<input type="month" name="month"></label><br>
+        </fieldset>
+        <fieldset>
+            <legend>파일 / 숨김 / 숫자</legend>
+            <label>파일 선택<input type="file" name="file"></label><br>
+            <label>숨김 <input type="hidden" name="hidden" value="숨겨진값"></label><br>
+            <label>숫자 <input type="number" name="number" min="1" max="10" step="2" ></label>
+            <label>범위 <input type="range" name="range" min="1" max="10" step="2" ></label>
+            <!-- 가상키보드 지원 -->
+        </fieldset>
+        <fieldset>
+            <legend>텍스트 확장 기능</legend>
+            <label>tel <input type="tel" name="tel"></label><br>
+            <label>url <input type="url" name="url"></label><br>
+            <label>email <input type="email" name="email" required></label><br>
+            <label>search <input type="search" name="search"></label><br>
+        </fieldset>
+
+        <button>전송</button>
+        <!-- button input
+            submit
+            reset
+            button
+            image
+         -->
+        <br>
+        <input type="submit" value="">
+        <input type="image" src="../img/blog-post-img2.jpg" width="50">
+        <button><img src="../img/blog-post-img2.jpg" alt="" width="50"></button>
+
+        <!-- text
+            확장기능
+            tel, url, email, search
+        -->
+    </form>
+
+</body>
+</html>

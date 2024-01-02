@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <!-- html tag attribute -->
+    <input type="text" id="userId" title="입력하세요" class="cls">
+    <img class="cls">
+    <img>
+    <script>
+        // DOM 문서 객체 모델 : 문서 동적 제어
+        let element = document.getElementById("userId"); // << 문서 객체
+        console.log(userId); // object :: HTML Element
+        console.log(userId.type); // object :: HTML Element
+        console.log(userId.title);
+        console.log("====================");    
+
+        userId.value = "입력";
+        // for(let i in userId){
+        //     console.log(i, userId[i]);
+        // }
+
+        let img = document.getElementsByTagName("img"); // colletction 반환
+        console.log(img);
+
+        for(let i in img){
+            img[i].src = "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png";
+        };
+
+        let cls = document.getElementsByClassName("cls");
+        console.log(cls);
+
+        // nth-child
+        let qsAll = document.querySelectorAll("img:nth-child(2)"); // 이거 많이 씀
+        console.log(qsAll);
+        let qs = document.querySelector("img");
+        console.log(qs);
+    </script>    
+</body>
+</html>

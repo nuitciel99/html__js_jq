@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* 0투명 ~ 1불투명 */
+        .opa img:nth-child(1){opacity: .2;}
+        .opa img:nth-child(2){opacity: .5;}
+        .opa img:nth-child(3){opacity: .8;}
+
+        /* transition */
+        /* 
+            transition-property : opacity
+            transition-duration : 동작시간
+            transition-timing-function : 시간함수, ease ease-in ease-out ease-in-out 
+            transition-delay : 지연시간 
+        */
+        .box{width: 100px; height: 100px;}
+        .box1{background: red; 
+            transition: all 2s ease .2s;
+            /* transition-property: background-color, width; */
+            transition-duration: 1s, 4s;
+            transition-timing-function: cubic-bezier(.23,-0.35,.68,1.37);
+        }
+        .box1:hover{background-color: blue; width: 200px; height: 200px; opacity: .3; margin-left: 300px;}
+    </style>
+</head>
+<body>
+    <div class=".opa">
+        <img src="../img/avtar10.jpg">    
+        <img src="../img/avtar10.jpg">    
+        <img src="../img/avtar10.jpg">    
+    </div>
+    <hr>
+    <div>
+        <div class="box box1"></div>
+    </div>
+</body>
+</html>

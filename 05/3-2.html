@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        th, td {padding: 16px;}
+        tbody {color: blue;}
+        tfoot {font-weight: bold; text-decoration: underline;}
+        col:nth-child(1) {background-color: #f002;}
+        col:nth-child(2) {background-color: #00f2;}
+    </style>
+</head>
+<body>
+    <table border="1" width="600">
+        <colgroup>
+            <col>
+            <col span="2">
+        </colgroup>
+        <!-- 컬럼명 th -->
+        <!-- DB 행을 열로 -->
+        <thead>
+            <tr>
+                <th>학년</th>
+                <th>평균키</th>
+                <th>평균체중</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>175.33</td>
+                <td>64.67</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>164.8</td>
+                <td>53.4</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>3</td>
+                <td>170.5</td>
+                <td>79</td>
+        </tbody>
+        <tr>
+            <td>4</td>
+            <td>176</td>
+            <td>85.33</td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td>전체</td>
+                <td>171.56</td>
+                <td>66.81</td>
+            </tr>
+        </tfoot>
+    </table>    
+</body>
+</html>

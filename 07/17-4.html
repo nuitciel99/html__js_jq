@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- 선형 / 원형 -->
+    <style>
+        .box{width: 100px; height: 100px;}
+        /* 선형 그라이언트 
+        linear-gradient(방향, color stop1, color stop2, ...)
+        방향 : 문자 to top right bottom left, 각도 지정 180deg 
+        */
+        .box1{background-image: linear-gradient(to bottom, red, green, blue);}
+        .box2{background-image: linear-gradient(45deg, black 70%, white 100%);}
+        .box3{background-image: linear-gradient(to right,
+             black 0, black 20px, 
+             white 20px, white 40px, 
+             black 40px, black 60px,
+             white 60px, white 80px,
+             black 80px
+             );}
+        .box4{background-image: repeating-linear-gradient(45deg, black 0 , black 20px, white 20px, white 40px);}
+        /* .box1{background-image: linear-gradient(bottom, red, green, blue);}
+        .box2{background-image: -webkit-linear-gradient(bottom, black, white);} */
+        .box5{width: 100%; background-image: repeating-linear-gradient(to right,
+            red 0, 
+            red 15px, 
+            orange 15px, 
+            orange 30px, 
+            yellow 30px, 
+            yellow 45px, 
+            green 45px, 
+            green 60px, 
+            blue 60px, 
+            blue 75px, 
+            navy 75px, 
+            navy 90px, 
+            purple 90px,
+            purple 105px
+            );}
+            /*  radial-gradient(원의 형태 크기 at 위치, color stop1, color stop2 ...) */
+            /* 원의 형태 : circle, ellipsis */
+            .box6{width: 200px; background-image: radial-gradient(circle closest-side at 20px 70px, red, black);}
+            .box7{background-image: repeating-radial-gradient(white 0, white 15px, #aaa 15px, #aaa 30px);}
+            .box8{background-image: conic-gradient(red, yellow, green, cyan, blue, magenta), 
+                radial-gradient(#0008, #0000);
+                border-radius: 50%;}
+                /* background */
+                /* background-size: */
+                /* background-position: */
+            body{background: fixed url(../img/blog-post-img2.jpg) no-repeat 10px 10px yellow;}
+            
+            /* 
+            
+            */
+    </style>
+</head>
+<body>
+    <!-- <div class="box box1"></div>    
+    <div class="box box2"></div>    
+    <div class="box box3"></div>    
+    <div class="box box4"></div>    
+    <div class="box box5"></div>    
+    <div class="box box6"></div>
+    <div class="box box7"></div>
+    <div class="box box8"></div> -->
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        ul li {list-style: none; background: no-repeat left center; padding-left: 40px; font-size: 2em;}
+        ul li:nth-child(1){background-image: url(../png/24/Korea-flag.png);}
+        ul li:nth-child(2){background-image: url(../png/24/China-flag.png);}
+        ul li:nth-child(3){background-image: url(../png/24/Japan-flag.png);}
+        ul li:nth-child(4){background-image: url(../png/24/Jamaica-flag.png);}
+        ul li:nth-child(5){background-image: url(../png/24/United-states-flag.png);}
+
+        ul li[title='ko'] {color: red;}
+        /* ^= 시작글자 */
+        ul li[title^='j'] {color: green;}
+        /* ^= 끝글자 */
+        ul li[title$='ca'] {text-decoration: underline;}
+
+        /* 포함글자 
+        |=  -
+        ~=  공백
+        *= 일반적인 포함
+        */
+        ul li[title|='ko']{font-weight: bold;}
+        ul li[title~='jp']{font-weight: bold;}
+        ul li[title*='a'] {font-style: italic;}
+
+        [class|='box']{width: 100px; height: 100px; background: orange;}
+    </style>
+</head>
+<body>
+    <div class="box-1"></div>
+    <div class="box-2"></div>
+    <div class="box-3"></div>
+    <ul>
+        <li title="ko_kr">한국</li>
+        <li title="ch">중국</li>
+        <li title="japan jp">일본</li>
+        <li title="jameica">자메이카</li>
+        <li title="en_us america">미국</li>
+    </ul>
+</body>
+</html>

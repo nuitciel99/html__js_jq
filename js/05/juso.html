@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        *{margin: 0; padding: 0;}
+        li {width: 800px; margin: 30px auto; list-style: none; border: 1px solid #ccc; box-shadow: 0 0 10px #aaa;}
+        li > *{margin: 15px 0; padding: 16px;}
+    </style>
+
+</head>
+<body>
+    <h1>주소 검색</h1>
+    <input type="search">
+    <button>검색</button>
+    <div id="juso">
+        <ul>
+            <li>
+                <p>지번 : </p>
+                <p>도로명 : </p>
+            </li>
+        </ul>
+    </div>
+    <script>
+        document.querySelector("button").onclick = function(){
+            const keyword = document.querySelector("input").value;
+            if(!keyword) return;
+            let url = `https://business.juso.go.kr/addrlink/addrLinkApi.do?currentPage=1&countPerPage=10&keyword=${keyword}&confmKey=U01TX0FVVEgyMDIzMDgxNzExMDczMTExNDAyNDU=&resultType=json`;
+
+        fetch(url)
+        .then(resp=>resp.json())
+        .then(json=>{
+            const juso = json.results.juso;
+            let str = [];
+            for(let i in juso){
+                str.push(
+                `<li>
+                    <p>${juso[i].jibunAddr}</p>
+                    <p>${juso[i].roadAddr}</p>
+                </li>`);
+            }
+            document.querySelector("#juso ul").innerHTML = str.join();
+        });
+    }
+    </script>    
+</body>
+</html>

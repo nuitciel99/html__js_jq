@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        console.log(typeof jQuery, jQuery);
+        console.log(typeof $, $);
+        console.log($ === jQuery);
+
+        // $.noConflict();
+        // console.log(typeof $, $);
+        // console.log($ === jQuery);
+        
+        // $() : 함수 호출 시, 인자의 타입에 따라 각기 다른 동작 
+        // 문자열 : selector > jQuery wrapping object 반환 
+        // 함수 : ready() 동작
+        // 객체 : jQuery wrapping object 반환 
+        
+        $(document).ready(function(){
+            // alert($("h1").text());
+        });
+
+        $().ready(function(){
+
+        });
+
+        $(function(){
+            // alert($("h1").attr("class"));
+        });
+    </script>
+</head>
+<body>
+    <button>버튼</button>
+    <h1 id="id" class="cls">hello world</h1>
+    <h1>hi</h1>
+    <h1>hello</h1>
+    <script>
+        $(".cls").css("color", "red");
+        $("button").click(function(){
+            // $("h1").hide();
+            $("h1").toggle(1000);
+        });
+    </script>
+</body>
+</html>

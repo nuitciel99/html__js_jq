@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    <style>
+        /* 
+        ttf : true type font
+        otf : open type font
+        웹폰트 전용 확장자
+        eot : ie 전용
+        woff :  모던 브라우저 폰트 확장자
+        */
+        @font-face{
+            src: url(fonts/BMHANNAPro.ttf);
+            font-family: 배민한나프로;
+        }
+        body{
+            font-family: 배민한나프로;
+        }
+        .font1{
+            font-family: 'Gowun DodUm';
+        }
+        .font2{
+            font-family: 'Noto Serif KR';
+        }
+        h1{font-weight: 400; font-style: italic;}
+    </style>
+</head>
+<body>
+    <h1>폰드 적용 테스트</h1>
+    <h1 class="font1">폰트 적용 테스트</h1>
+    <h1 class="font2">폰트 적용 테스트</h1>
+</body>
+</html>

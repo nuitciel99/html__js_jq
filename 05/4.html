@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $(".slider").bxSlider();
+      });
+    </script>
+    <style>
+        *{margin: 0;}
+        .cls-width {width: 1000px; margin: 0 auto;}
+        header{background: #9cc; padding-top: 28px;}
+
+        .gnd{padding: 20px; background-color: black; margin: 0;}
+        .gnd > li {float: left; list-style: none;}
+        .gnd::after {display: block; content: '';clear: both;}
+        .gnd > li > a {color: #eee; text-decoration: none; margin: 20px;}
+        .gnd > li > a:hover{color: yellow;}
+
+        .gnd > li:hover ul {display: block;}
+        .gnd ul {position: absolute; background-color: black; padding: 20px; display: none;}
+        .gnd ul li {list-style: none; margin: 15px 0;}
+        .gnd ul li a {color: #eee; text-decoration: none;}
+
+        main{background: #c99; padding: 28px;}
+
+        .content section {height: 400px; margin: 20px 0;}
+        
+        .content > article {background: #c9c; width: 650px; float: left;}
+        .content > aside {background: #9cc; width: 300px; float: left; text-align: center;}
+        
+        .content > aside input, button{padding: 12px; margin: 10px;}
+        .content > aside button {width: 200px;}
+        
+        main::after {display: block; content: '';clear: both;}
+
+        footer{background: #9c9; padding: 28px;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="cls-width">
+            <h1>헤더 영역</h1>
+            <nav>
+                <ul class="gnd">
+                    <li><a href="">대분류1</a>
+                        <ul>
+                            <li><a href="">중분류1</a></li>
+                            <li><a href="">중분류2</a></li>
+                            <li><a href="">중분류3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">대분류2</a>
+                        <ul>
+                            <li><a href="">중분류1</a></li>
+                            <li><a href="">중분류2</a></li>
+                            <li><a href="">중분류3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">대분류3</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="cls-width">
+        <h1>메인 영역</h1>
+        <div class="content">
+            <article>
+                <section>
+                    <h4>배너</h4>
+                    <div class="slider">
+                        <img src="https://bxslider.com/assets/succulents-7b5637dbc01af703069905a7991d9e7e7d27c680fa885fe3d6c713c1f77c0f92.jpg" width="100%">
+                        <img src="https://bxslider.com/assets/plant-bd76206132f914fc54fd28f9794f7fe346bb8b9a9d16dd5de830b93f365eea9c.jpg" width="100%">
+                        <img src="https://bxslider.com/assets/daisies-aef04136667e60d9190943f4c6cd605043e67188247ffe928500edfd29b0a158.jpg" width="100%">
+                    </div>
+                </section>
+                <section>
+                    <h4>기사</h4>
+                </section>
+                <section>
+                    <h4>영상</h4>
+                </section>
+                <section>
+                    <h4>카페</h4>
+                </section>
+            </article>
+            <aside> <!--  연관성을 가지고 있지만, 해당 콘텐츠들로부터 분리 -->
+                <p>로그인</p>
+                <form>
+                    <input type="text" name="userid" placeholder="id">
+                    <input type="password" name="userpw" placeholder="pw">
+                    <button>로그인</button>
+                </form>
+            </aside>
+        </div>
+    </main>
+    <footer class="cls-width">
+        <div>
+        <h1>푸터 영역</h1>
+        <address>
+            <p>대륭 포스트 2차 더조은 아카데미</p>
+            <p>copyright &copy;</p>
+        </address>
+        </div>
+    </footer>    
+</body>
+</html>

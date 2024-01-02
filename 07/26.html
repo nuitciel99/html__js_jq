@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        @keyframes ani {
+            from {
+                transform: translate(0, 0);
+            }
+            to{
+                transform: translate(500px, 0);
+            }
+        }
+
+        
+        @keyframes ani2 {
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes ani3 {
+            0%{
+                transform: translate(0,0);
+            }
+            20%{
+                background-color: blue;
+                transform: translateX(40px);
+            }
+            40%{
+                transform: translateY(40px);
+                border-radius: 50%;
+            }
+            60%{
+                transform: translateX(80px);
+                background-color: green;
+            }
+            80%{
+                transform: translateY(80px);
+            }
+            100%{
+                transform: translateX(0,0);
+            }
+        }
+        
+        .box{width: 100px; height: 100px; background: red;}
+        .box1{opacity: .3; animation: ani 1s ease-out .2s infinite alternate;
+            /* animation-iteration-count: 3; animation-direction: alternate; */
+        }
+        .box2{opacity: .5; animation: ani2 .3s linear .1s infinite;}
+        .box3{opacity: .2; animation: ani3 1s infinite;}
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>    
+    <div class="box box2"></div>    
+    <div class="box box3"></div>    
+</body>
+</html>

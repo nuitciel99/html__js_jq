@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        *{margin: 0; padding: 0;}
+        li {width: 800px; margin: 30px auto; list-style: none; border: 1px solid #ccc; box-shadow: 0 0 10px #aaa;}
+        li > *{margin: 15px 0; padding: 16px;}
+    </style>
+</head>
+<body>
+    <div id="list">
+        <ul>
+            <li>
+                <p><span>1</span> <span>id</span></p>
+                <h3>제목 구간</h3>
+                <p>본문</p>
+            </li>
+            <li>
+                <p><span>2</span> <span>id</span></p>
+                <h3>제목 구간</h3>
+                <p>본문</p>
+            </li>
+        </ul>
+    </div>    
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/posts");
+        xhr.send();
+
+        xhr.onload = function() {
+                if(xhr.status === 200) {
+                    console.log("성공");
+                    // console.log(xhr.response);
+                    const posts = JSON.parse(xhr.response);
+                    console.log(posts);
+                    let str = [];
+                    for(let i in posts){
+                        str.push(
+                        `<li>
+                            <p><span>1</span>${posts[i].id}<span>${posts[i].userId}</span></p>
+                            <h3>${posts[i].title}</h3>
+                            <p>${posts[i].body}</p>
+                        </li>/`);
+                    }
+                    document.querySelector("#list ul").innerHTML = str.join();
+                }
+                else {
+                    console.log("실패");
+                }
+            }
+    </script>
+</body>
+</html>

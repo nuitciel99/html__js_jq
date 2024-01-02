@@ -1,0 +1,247 @@
+*{margin: 0;padding: 0;}
+
+a{
+    text-decoration: none;      /* a 태그 밑줄 제거 */
+}
+body:after {                    /* 모든 화면 뒷배경 통일 */
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background:  repeating-linear-gradient(110deg, 
+    #171779,#881b1b);
+    z-index: -1;
+}
+/* @font-face{                          // 폰트 적용 공부
+    src: url(fonts/BMHANNAPro.ttf);
+    font-family: 배민한나프로;
+}
+
+*{
+    font-family: 배민한나프로, serif;
+} */
+
+
+/* index Header */
+.indexHeader{
+    background: #413e3e; padding-top: 28px; text-align: center;
+    }
+    
+    .indexHeader .cls-width img{                          /* Header 엠블럼 크기 */
+        height: 150px; 
+    }                        
+    .indexHeader .cls-width nav{
+        width: 1400px; margin: 0 auto; 
+    }
+    .indexHeader ul.gnd{                                /* Header 대분류 */
+        width: 300px; padding: 20px; margin: 0; 
+    }
+    .indexHeader ul.gnd > li {                             
+        float: left; list-style: none; 
+    }         
+    .indexHeader ul.gnd::after { 
+        display: block; content: '';clear: both; 
+    }
+    .indexHeader ul.gnd > li > a {                                              
+        color: gold; text-decoration: none; margin: 20px; float: left; 
+    }
+
+    .indexHeader ul.gnd > li:hover ul { 
+        display: block; 
+    }
+    .indexHeader ul.gnd ul {                                                                        /* Header 중분류 */
+        position: absolute; background-color: black; padding: 10px 10px; display: none; 
+    }
+    .indexHeader ul.gnd ul li { 
+        list-style: none; margin: 10px 0; 
+    }      
+    .indexHeader ul.gnd ul li a{                
+        color: gold; 
+    }      
+
+/* index Main */
+.indexMain{
+    padding: 80px;
+    }
+
+    .clearfix::after{       
+        display: block;
+        content: "";
+        clear: both;
+    }
+    
+    .indexMain > .content{              /* main content width 규격 늦은 숙지 : 제출 후 개인적으로 새 화면 구현하며 공부하기 */
+        width: 1400px;
+        margin: 0 auto;
+    }
+
+    .indexMain > .content > .clearfix { 
+        float: left; width: 1100px; margin-right: 70px; 
+    } 
+
+    .indexMain > .content .mainfirst {                      /* 메인 중간 중 슬라이드1 */
+        width: 500px; height: auto; float: left; 
+    }     
+    .indexMain > .content .mainsec {                        /* 메인 중간 중 슬라이드2 */
+        width: 500px; height: auto; float: right;
+    }      
+    .indexMain > .content .mainrd {                         /* 메인 중간 중 슬라이드3 */
+        width: 500px; height: auto; float: left; 
+    }
+    .indexMain > .content .mainfh {                         /* 메인 중간 중 슬라이드4 */
+        width: 500px;height: auto; float: right; 
+    }
+    .indexMain .content .slider img{                        /* 슬라이드 이미지 효과 : 커서 움직 감지 후 확대 */
+        height: 290px; display: block; object-fit:cover; object-position: top; transition: all 0.2s;
+    }
+    .indexMain .content .slider img:hover{ 
+        transform: scale(1.1); 
+    }
+
+    .indexMain .content .videos {                                               /* index Main 영상 크기 및 위치 조정 */
+        width: 100%; height: 250px; display: block; float: left; 
+    } 
+    .indexMain .content .videos iframe:nth-child(1) { float: left; }                         
+    .indexMain .content .videos iframe:nth-child(2) { float: right; }
+    
+    .indexMain .content .fanvoice{                                              /* index Main 응원글 */
+        width: 100%; height: auto; display: block; float: left; 
+    }
+    .indexMain .content .fanvoice p{ 
+        border: 5px; width: 350px; height: 200px; background: white; margin: 50px; 
+        display: block; float: left; border-radius: 10px 10px;  transition: all 0.2s linear; 
+    }
+    .indexMain .content .fanvoice p:nth-child(1) { float: left; }
+    .indexMain .content .fanvoice p:nth-child(2) { float: right; }
+    .indexMain .content .fanvoice p:hover { transform: scale(1.1); }        /* index Main 응원글 커서 감지 후 확대 */
+
+    .indexMain > .content > article h4 { color: gold; }       /* index Main 슬라이드 이름 색상 */
+   
+    .indexMain > .content > aside{                              /* index Main 로그인 및 회원 가입 */
+        padding-top: 30px; width: 230px; float: left; 
+    }   
+    .indexMain > .content > aside .foruser{                     /* index Main 로그인 / 회원가입 위치, 크기, 색감 */
+        color: gold; display: block; height: 30px; text-align: center; padding: 10px; background-color: #0008; 
+        border-radius: 5px; box-shadow: 0 0 5px #000; margin-bottom: 10px; 
+    }
+    .indexMain > .content > aside .foruser:nth-of-type(2){
+        margin-bottom: 50px;
+    }
+    .indexMain > .content > aside a:nth-of-type(n + 3){
+        margin-bottom: 30px;
+        display: inline-block;
+    }
+    .indexMain > .content > aside img{                                      /* 바르셀로나 서포터 이미지 속성 조정 */
+        display: block; height: 300px; border-radius: 10px 10px; 
+    }
+        
+    .indexMain::after { display: block; content: ''; clear: both; }
+
+/* index Footer */
+.indexFooter{                                                               /* index Footer 중앙 배치 및 색감 */
+    background: #413e3e; padding: 28px; color: gold; font-size: large; text-align: center;
+    }
+
+
+
+
+
+/* signIn */
+.signInMain{
+    height: 100vh;          /* signIn 화면 중앙에 배치 */
+    text-align: center;
+    }
+    .signInMain::before {
+        content: '';
+        display: inline-block;
+        height: 100vh;
+        vertical-align: middle;
+    }
+    .signInMain > .signIn {
+        width: 300px; display: inline-block;
+    } 
+    .signInMain > .signIn img{                                                  /* 바르셀로나 엠블럼 추가 */
+        width: 70px; height: auto; margin: 10px; border-radius: 10px 10px;
+    }
+    .signInMain > .signIn .intitle{
+        width: 65px; height: auto; color: gold; margin: auto; font-size: 25px;
+    }
+    .signInMain > .signIn input{                                                /* signIn 로그인 input */
+        width: 300px; padding: 10px; margin: 10px auto; background: white; border-radius: 10px 10px; 
+    }
+    .signInMain > .signIn button{                                               /* signIn 로그인 시 메인 화면으로 이동 */
+        width: 100px; height: 30px; margin-bottom: 10px;
+    }
+    .signInMain > .signIn .search{                                              /* signIn 아이디 / 비번 찾기 */
+        width: 65px; height: auto; color: gold;
+    }
+
+
+
+
+/* signUp */
+.signUpMain{                    /* signUp 화면 중앙에 배치 */
+    height: 100vh;
+    text-align: center;
+    }
+    .signUpMain::before {
+        content: '';
+        display: inline-block;
+        height: 100vh;
+        vertical-align: middle;
+    }
+    .signUpMain > .signUp {
+        width: 300px; display: inline-block;
+    } 
+    .signUpMain > .signUp .upbyid{                                          /* signUp ID로 회원가입 */
+        width: 80px; height: auto; color: gold; margin: auto;
+    }
+    .signUpMain > .signUp .upbyemai{                                        /* signUp email로 회원가입 */
+        width: 160px; height: auto; color: gold; margin: auto;
+    }
+    .signUpMain > .signUp input{
+        width: 300px; padding: 10px; margin: 10px auto; background: white; border-radius: 10px 10px;
+    }
+    .signUpMain > .signUp button{                                           /* signUp ID 중복 확인 및 계정 생성 */
+        width: 100px; height: 30px; margin: 10px; background-color: #248224; border-radius: 10px 10px; font-style: italic;
+    }
+    .signUpMain > .signUp img{
+        width: 70px; height: auto; margin: 10px; border-radius: 10px 10px;
+    }
+
+
+
+
+/* contract */
+.contractMain{                                                              /* contract 이용 약관 */
+    height: 100vh;
+    text-align: center;
+    }
+    .contractMain::before {
+        content: '';
+        display: inline-block;
+        height: 100vh;
+        vertical-align: middle;
+    }
+    .contractMain > .contractdiv {
+        width: 300px; display: inline-block;
+    } 
+    .contractMain > .contractdiv img{
+        width: 70px; height: auto; margin-top: 50px;
+    }
+    .contractMain > .contractdiv > .ctrtitle {
+        width: 100px; height: auto; color: gold; margin: 40px 95px; padding: 10px; font-size: 20px;
+    }
+    .contractMain > .contractdiv > .contracts{                                            /* contract 이용 약관 */
+        width: 300px; height: 300px; background: white; overflow: auto; padding: 
+        10px; margin-bottom: 10px; text-align: justify; font-weight: bolder;
+    }
+    .contractMain > .contractdiv > .checkbox{                                             /* contract 이용 약관 동의 체크 박스 */
+        color: gold; font-size: 20px;
+    }
+    .contractMain > .contractdiv > .checkbox > .box{width: 20px;}
+    .contractMain > .contractdiv > .togo{                                                 /* contract 동의 후 회원 가입 페이지로 이동 */
+        margin: auto; color: gold; font-size: 20px;
+    }

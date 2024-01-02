@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // 값 가져오기 : getter
+        // text(): innerText
+        // html(): innerHTML
+        // val(): value
+
+        // 값 지정하기 : setter
+        // text(str), text(function) 
+        // html(str), html(function)
+        // val(str), val(function)
+
+        // getter 계열
+        // attr(str) : attribute
+        // css(str) : style
+        // data(str) : dataset
+
+        // setter 계열
+        // attr(str, str), attr(str, function), attr(obj) // 속성 지정 가능, 객체 전달 가능
+        // css(str, str), css(str, function), css(obj)
+
+        // setter > 항상 반환이 $(this) >> 그래서 chaining이 됨
+
+    </script>
+</head>
+<body>
+    <input><button>클릭</button>
+    <p>기본 텍스트</p>
+    <p>기본 텍스트</p>
+    <a></a>
+
+    <script>
+        $("p").click(function(){
+            console.log($((this).text()));
+        });
+
+        $("button").click(function(evt){
+            // $("p").text($("p").text() + $("input").val()); 
+            $("p").text(function(idx, item){  // idx : p의 index
+                console.log(idx, item);
+                return item + $("input").val();
+            })
+        });
+
+        $("a")
+        .html("<h3>다음</h3>")
+        .attr({href:"https://www.daum.net", 'title':"다음 링크"}) // obj
+        .click(function(){
+            return confirm($(this).attr("title") + "로 이동하시겠습니까??"); // boolean
+        })
+        .css({textDecoratin:"none", "color":"black"})
+        .hover(function(){
+            $(this).css("text-decoration", "underline");
+        }, function(){
+            $(this).css({textDecoratin:"none"});
+        });
+
+        // 
+        $("body").append("<h1>추가된 h1</h1>");
+        $("body").prepend("<h1>추가된 h1 prepend</h1>");
+        $("h1").after("<p>추가된 p</p>");
+        $("h1").before("<p>추가된 p before</p>");
+
+        // $(A).append(B), $(B).appendTo(A) : 
+        // append > appendTo
+        // prepend > prependTo
+        // after > insertAfter
+        // before > insertBefore
+        $("<h2>appendTo를 이용한 추가</h2>").appendTo("body");
+        
+        // h4 태그를 추가 css color, click event
+        $("<h4>추가되는 텍스트</h4>")
+        let $h4 = $("<h4>").text("추가되는 텍스트").css("color","purple").click(function(){alert(this.innerText)});
+        $("body").append($h4);
+        $("<h4>").text("추가되는 텍스트").css("color","purple").click(function(){alert(this.innerText)}).appendTo("body");
+
+        // input, button
+        $("input", "button").remove();
+        $("h4").empty();
+    </script>
+    
+</body>
+</html>

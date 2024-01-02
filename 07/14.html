@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .td1{text-decoration: none;}
+        .td2{text-decoration: line-through; text-decoration-style: dashed;}
+        .td3{text-decoration: underline;}
+        .td4{text-decoration: overline red dotted 3px;}
+        .td5{text-decoration: underline overline;}
+
+        .ts{
+            font-family: arial; font-size: 100px; 
+            font-weight: 800; text-transform: uppercase;
+        }
+
+        /* text-shadow : x y blur color */
+        .ts1{text-shadow: 3px 6px 10px #8e3;}
+        .ts2{text-shadow: 5px 10px 13px rgba(211, 0, 136, .5), -5px -10px 13px rgba(211, 0, 136, .5);}
+        .ts3{text-shadow: 10px 10px 20px rgba(211, 0, 136, .5), 20px 20px 30px rgba(0, 177, 211, .5);}
+        .ts4{text-shadow: 10px 10px #0008;}
+        .ts5{text-shadow: 10px 10px 10px #0008;}
+        .ts6{text-shadow: 0 0 5px #000, 0 0 15px #0008; color: #fff;}
+        .ts7{background: #000; padding: 60px 0 30px;
+            text-shadow: 
+                0 0 2px #fff,
+                0 -10px 10px #ff0,
+                0 -20px 15px #f80,
+                0 -40px 30px #f00
+            ;
+        }
+    </style>
+</head>
+<body>
+    <h1>text-decoration</h1>
+    <h3 class="td1">텍스트 줄긋기</h3>    
+    <h3 class="td2">텍스트 줄긋기</h3>    
+    <h3 class="td3">텍스트 줄긋기</h3>    
+    <h3 class="td4">텍스트 줄긋기</h3>    
+    <h3 class="td5">텍스트 줄긋기</h3>   
+    
+    <div class="ts">
+        <h3 class="ts1">web publisher</h3>
+        <h3 class="ts2">full stack</h3>
+        <h3 class="ts3">web master</h3>
+        <h3 class="ts4">web master</h3>
+        <h3 class="ts5">web master</h3>
+        <h3 class="ts6">web master</h3>
+        <h3 class="ts7">web master</h3>
+    </div>
+</body>
+</html>

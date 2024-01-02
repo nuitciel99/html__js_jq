@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        let members = [
+            {no : 1, name : '홍길동', age : 20},
+            {no : 2, name : '김길동', age : 30},
+            {no : 3, name : '이길동', age : 40},
+            {no : 4, name : '박길동', age : 50},
+        ];
+    </script>
+</head>
+<body>
+    <button id = "btn">click me</button>
+    <table border ="1" width = "600" id="tbl">
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>나이</th>
+        </tr>
+    </table>
+    <script>
+        // console.log(members);
+        let cnt = 0;
+        document.getElementById("btn").addEventListener("click", function(){
+            // console.log("클릭");
+            // console.log(members[cnt++ % 4]); 
+            let mem = members[cnt++ % 4];
+            // let str = "";
+            // str += "<tr>";
+            // str += "<td>" + mem.no + "</td>";
+            // str += "<td>" + mem.name + "</td>";
+            // str += "<td>" + mem.age + "</td>";
+            // str += "<tr>";
+            let str = `
+            <tr>
+                <td>${mem.no}</td>
+                <td>${mem.name}</td>
+                <td>${mem.age}</td>
+            </tr>
+            `;
+            console.log(str);
+            document.getElementById("tbl").innerHTML += str;
+        });
+    </script>
+</body>
+</html>

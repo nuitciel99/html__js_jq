@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        ul{list-style: none; width: 850px; margin: 0 auto;}
+        ul li{width: 400px; float: left; margin: 10px; border: 1px solid;}
+        .answer {display: none;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+        <li>
+            <p class="ask"><a href="#">질문</a></p>
+            <p class="answer">답변</p>
+        </li>
+    </ul>    
+    <script>
+        let a = document.querySelectorAll("a");
+        let answer = document.querySelectorAll('.answer');
+        
+        for(let i in a){
+            a[i].onclick = function(){
+                a[i].parentNode.nextElementSibling.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

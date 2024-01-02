@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 노란 상자 크기 -->
+    <!-- 대분류 -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .box{width: 100px; height: 100px; background: yellow;}
+        ul{background: black;}
+        ul li {display: inline-block; list-style: none; margin: 20px 50px;}
+        ul li a{color: white; text-decoration: none;}
+        .gnb{position: relative;}
+        .menu{height: 300px; background: #aaa; position: absolute; width: 100%; top: 60px; display: none;}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="gnb">
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+        </ul>
+        <div class="menu">
+        </div>
+    </div>
+    <h1>실제 컨텐츠</h1>
+    <script>
+        // 애니메이션 큐(Queue)
+        // click, click, dbclick 9초
+        // 큐 제어 함수 stop 
+        $(".box").click(function(){
+            $(this).stop().animate({width:"+=100", height:"+=100"}, 3000);
+        }).dblclick(function(){
+            $(this).stop().animate({width:"-=100", height:"-=100"}, 3000);
+        });
+
+        $(".gnb").hover(function(){
+            $(".menu").stop().slideDown(200);
+        }, function(){
+            $(".menu").stop().slideUp(200);
+        })
+    </script>
+</body>
+</html>

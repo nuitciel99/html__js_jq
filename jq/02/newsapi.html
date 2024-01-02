@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .clearfix::after{content: ''; clear: both; display: block;}
+        ul {padding: 0; width: 800px; border: 1px solid black;}
+        li {list-style: none; padding: 10px;}
+        li div:first-child img{max-width: 150px;}
+        li div:first-child h3{width: 550px; overflow: hidden; white-space: nowrap;}
+        li div:first-child > * {float: left; margin-left: 30px;}
+
+        .content{display: none;}
+        .active{display: block;}
+
+        li:hover .content{display: block;}
+    </style>
+    
+    <script>
+        // json api 
+        $.ajax("https://newsapi.org/v2/top-headlines?country=kr&category=business&apiKey=c536eaa496e74580913d4a8001c93fbf", {
+            success:function(data){
+                // 대체 문법
+                // 1. 삼항  2. 논리  3. ??
+                // let i = 0; j = i || 10; // j?
+                console.log(data);
+
+                let str = "";
+                for(let i of data.articles){
+                    str +=
+                    `
+                    <li >
+                        <div class="clearfix">
+                            <img src="${i.urlToImage ?? "https://placehold.co/150x100"}">
+                            <h3><a href="${i.url}">${i.title}</a></h3>
+                            <p>${i.publishedAt}</p>
+                        </div>
+                        <div class="content">
+                            <p>${i.description ?? '기사 없음'}</p>
+                        </div>
+                    </li>
+                    `;
+                }
+                $("ul").html(str);
+            }
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li >
+            <div class="clearfix">
+                <img src="http://www.press9.kr/news/thumbnail/202309/56619_66950_2948_v150.jpg">
+                <h3><a href="http://www.press9.kr/news/articleView.html?idxno=56619">셀트리온헬스케어, '램시마' 유럽 허가 10주년 글로벌 캠페인 전개 - PRESS9(프레스나인)</a></h3>
+                <p>2023-09-11T00:30:06Z</p>
+            </div>
+            <div class="content">
+                <p>[프레스나인] 셀트리온헬스케어는 올해 9월 기준으로 유럽 허가 10주년을 맞이한 램시마를 기념하기 위해 글로벌 전역에서 다양한 캠페인을 전개할 계획이다. 2023 유럽장질환학회(United European Gastroenterology Week, UEGW)를 시작으로 내년 상반기까지 글로벌 연자 투어(Global Speaker Tour), 심포지엄 개최 등을 진행할 예정이다. 이를 통해 램시마가 지난 10년 동안 걸어왔던 성과들을 재조명하고, 램시마의 성공으로…</p>
+            </div>
+        </li>
+        <li >
+            <div class="clearfix">
+                <img src="https://placehold.co/150x100">
+                <h3><a href="http://www.press9.kr/news/articleView.html?idxno=56619">셀트리온헬스케어, '램시마' 유럽 허가 10주년 글로벌 캠페인 전개 - PRESS9(프레스나인)</a></h3>
+                <p>2023-09-11T00:30:06Z</p>
+            </div>
+            <div class="content">
+                <p>[프레스나인] 셀트리온헬스케어는 올해 9월 기준으로 유럽 허가 10주년을 맞이한 램시마를 기념하기 위해 글로벌 전역에서 다양한 캠페인을 전개할 계획이다. 2023 유럽장질환학회(United European Gastroenterology Week, UEGW)를 시작으로 내년 상반기까지 글로벌 연자 투어(Global Speaker Tour), 심포지엄 개최 등을 진행할 예정이다. 이를 통해 램시마가 지난 10년 동안 걸어왔던 성과들을 재조명하고, 램시마의 성공으로…</p>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

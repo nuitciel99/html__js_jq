@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* selector */
+
+         /* 속성 선택자  */
+
+         /* 가상 요소 psuedo class */
+         /* : ~일때 */
+        a:link {color: black;}
+        a:visited{color: green;}
+        a:active{color: yellow;}
+        
+        a:focus{color: chocolate;}
+        a:hover{color: brown;} 
+        input:focus{box-shadow: 0 0 0 10px #aaf;}
+         /* 폼 가상요소 */
+        
+         /* 구조 가상요소 */
+        .para p::before{content: '$';}
+        .para p::after{content: '입니다';}
+
+        .balloon{display: inline-block; background: black; color: white; padding: 20px; 
+            border-radius: 10px; position: relative;
+            min-width: 100px;
+            max-width: 300px;
+        }
+        /* .etc{width: 0; border: 15px solid transparent; border-top: 30px solid black; margin: 0 auto;
+            position: absolute; left: 50px; bottom: -45px;
+            transform: skewX(-20deg);
+        } */
+        .balloon::after{
+            content: ''; display: block;
+            width: 0; border: 15px solid transparent; border-top: 30px solid black; margin: 0 auto;
+            position: absolute; left: 50px; bottom: -45px;
+            transform: skewX(-20deg);
+        }
+        /* 
+            nine-patch
+        */
+        /* 속성 선택자 [] */
+        [title] {text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <a href="#" title="제목">링크</a>
+    <input>
+    <input>
+    <div class="para">
+        <p>문단1</p>
+        <p>문단2</p>
+        <p>문단3</p>
+    </div>
+    <div class="balloon" title="말풍선">
+        실제 컨텐츠가 들어갈 영역 실제 컨텐츠가 들어갈 영역 실제 컨텐츠가 들어갈 영역 실제 컨텐츠가 들어갈 영역
+        <div class="etc"></div>
+    </div>
+
+    <div class="balloon">
+        우와 정말 신기해
+    </div>
+</body>
+</html>

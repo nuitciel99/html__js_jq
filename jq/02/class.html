@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 페이지 선택 효과 -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        li{list-style: none; display: inline-block; padding: 20px;}
+        li a.link{text-decoration: none; color: black;}
+        li a.active {font-weight: bold; text-decoration: underline;}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <ul>
+        <li><a href="#" class="active link">1</a></li>
+        <li><a href="#" class="link">2</a></li>
+        <li><a href="#" class="link">3</a></li>
+        <li><a href="#" class="link">4</a></li>
+    </ul>
+
+    <script>
+        // 페이지 번호 클릭 시 해당 페이지 번호에만 active class 적용
+        $("a").click(function(){
+            event.preventDefault();
+            // this : a
+            // $(this) : 이벤트가 발생한 a만, $("a") : a 태그 4개 다
+            // $("a").attr("class", "")
+            $("a").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        console.log($("li").width());
+        console.log($("li").outerWidth());
+    </script>
+</body>
+</html>
