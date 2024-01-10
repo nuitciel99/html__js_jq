@@ -1,0 +1,62 @@
+# html & Java Script & JQuery (+ bootstrap)
+
+- HTML & JQuery
+
+  - document
+  - querySelector
+  - querySelectorAll
+  - onclick
+  - toggle
+  - click / bind / on / hover
+  - event.preventDefault()
+  - event.stopPropagation()
+  - submit / alert
+  - ready / .css
+  - object
+  - mouseenter / mouseover / append / focus / focusin / blur
+  - ajax
+  - stop / animate / slideDown / slideUp
+  - xml data
+  - removeClass / addClass
+  - toggle / fadeToggle / slideToggle / fadeTo
+  - eq / end / filter / not / add
+  - text / attr / confirm / after / before / appendTo / remove / empty
+  - of
+
+- Java Script
+  - typeof
+  - undefined
+  - 연산자 (대입 / 산술) / 비교 논리 / == ===
+  - var / let / const
+  - NaN / null
+  - infinity
+  - Date()
+  - 함수 단독 호출 / 의존 호출
+  - hoisting
+  - scope (java : 블록레벨 스코프 / javascript : 함수 레벨 스코프 )
+  - callback function
+  - 지역 변수 / closure
+  - toFixed / parseInt / toString / join / push / pop / shift / unshift / splice
+  - prototype
+  - map / forEach
+  - find / some / every
+  - map / filter / reduce / reduceRight
+  - 정규 표현식
+  - prototype.total / prototype.avg / prototype.toString / prototype.doubleToString / format / parse / remove
+  - 캡슐화
+  - Math.random / Set
+  - JSON.stringify / JSON.parse / Symbol
+  - window / screen / history / location / navigator / document
+  - open / innerHTML / moveTo / setInterval / moveBy / clearInterval / setTimeout
+  - DOM / getElementById / getElementsByTagName / getElementsByClassName
+  - change / prop
+  - jsonplaceholder (open API) / XMLHttpRequest / open / send / onload
+  - juso (open API) / fetch / then / join
+  - setRequestHeader
+  - 멀티 스레드 / 싱글 스레드 / 비동기 / 동기
+  - exec / match / test
+  - onkeyup / .csv
+  - insertAdjacentHTML / onchange
+  - addEventListener / click / mouseenter / focus / mouseleave / blur / click / removeEventListener
+  - innerHTML / innerText / createElement / createTextNode / appendChild / createElement / prepend
+  - onkeyup / onkeydown / onkeypress / onmousemove / onscroll / offsetHeight / innerHeight
